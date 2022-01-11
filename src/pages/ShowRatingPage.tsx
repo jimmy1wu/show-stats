@@ -1,50 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useRouteMatch } from "react-router";
-import { getTVShowEpisodes } from "../api";
-import { TVShowEpisodes } from "../models";
 import { getColorFromRating } from "../utils";
 import { Container, Loading, RatingsChart, EpisodeList } from "../components";
+import useTVShowEpisodes from "../hooks/useTVShowEpisodes";
 
 type MatchParams = {
   id: string;
 };
 
 const ShowRatingPage = () => {
-  const [showData, setShowData] = useState<TVShowEpisodes | null>(null);
   const match = useRouteMatch<MatchParams>();
   const imdbID = match.params.id;
 
-  useEffect(() => {
-    (async () => {
-      const tvShowEpisodes = await getTVShowEpisodes(imdbID);
-      setShowData(tvShowEpisodes);
-    })();
-  }, [imdbID]);
+  const {
+    seriesName,
+    totalSeasons,
+    episodes,
+    averageRating,
+    highestRatedEpisodes,
+    lowestRatedEpisodes,
+    isEpisodesLoading,
+    episodesError,
+    isEpisodesError,
+  } = useTVShowEpisodes(imdbID);
 
-  if (!showData) {
-    return (
-      <Container>
-        <div className="pt-10 pb-20">
-          <Loading />
-        </div>
-      </Container>
-    );
+  if (isEpisodesLoading) {
+    return <Loading />;
   }
-
-  const sortedEpisodes = showData.episodes
-    .slice()
-    .sort((a, b) => b.imdbRating - a.imdbRating)
-    .filter((episode) => episode.imdbRating !== 0);
-
-  const averageRating = parseFloat(
-    (
-      sortedEpisodes.reduce((a, b) => a + b.imdbRating, 0) /
-      sortedEpisodes.length
-    ).toFixed(1)
-  );
-
-  const highestRatedEpisodes = sortedEpisodes.slice(0, 5);
-  const lowestRatedEpisodes = sortedEpisodes.slice(-5).reverse();
 
   return (
     <Container>
@@ -52,9 +34,9 @@ const ShowRatingPage = () => {
         <div className="mb-6">
           <RatingsChart
             imdbID={imdbID}
-            title={showData.title}
-            episodes={showData.episodes}
-            totalSeasons={showData.totalSeasons}
+            title={seriesName}
+            episodes={episodes}
+            totalSeasons={totalSeasons}
           />
         </div>
         <div className="lg:flex text-center">

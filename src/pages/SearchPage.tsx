@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, SearchForm, SearchResults, Loading } from "../components";
-import { searchTVShow } from "../api";
-import { Show } from "../models";
+import useSearchTVShow from "../hooks/useSearchTVShow";
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState<Show[] | null>(null);
-  const [loading, setLoading] = useState(false);
 
-  const onSubmit = async (query: string) => {
-    setLoading(true);
-    setSearchTerm(query);
-    const { results } = await searchTVShow(query);
-    setSearchResults(results);
-    setLoading(false);
+  const {
+    fetchSearchResults,
+    searchResults,
+    isLoadingSearchResults,
+    searchResultsError,
+    isSearchResultsError,
+  } = useSearchTVShow(searchTerm);
+
+  useEffect(() => {
+    if (searchTerm !== "") {
+      fetchSearchResults();
+    }
+  }, [searchTerm, fetchSearchResults]);
+
+  const onSubmit = (query: string) => {
+    if (query !== "") {
+      setSearchTerm(query);
+    }
   };
 
   return (
@@ -25,13 +34,13 @@ const SearchPage = () => {
       </div>
       <div className="pt-10 pb-20">
         <Container>
-          {loading ? (
+          {isLoadingSearchResults ? (
             <Loading />
           ) : (
             searchResults && (
               <SearchResults
                 searchTerm={searchTerm}
-                searchResults={searchResults}
+                searchResults={searchResults.results}
               />
             )
           )}

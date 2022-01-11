@@ -15,7 +15,7 @@ const Loading = () => {
   }
 
   return (
-    <div className={`text-center text-2xl transform ${rotateTransform}`}>
+    <div className={`pt-10 text-center text-2xl transform ${rotateTransform}`}>
       ⌛ Loading...
     </div>
   );
