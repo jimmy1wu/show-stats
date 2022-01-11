@@ -3,7 +3,7 @@ import { QUERY_KEYS } from "../lib/constants";
 import { searchTVShow } from "../lib/netlifyFunctionsApi";
 
 const useSearchTVShow = (query: string) => {
-  const { refetch, data, isLoading, error, isError } = useQuery(
+  const { refetch, data, isLoading, isSuccess, error, isError } = useQuery(
     [QUERY_KEYS.TV_SHOWS, query],
     () => searchTVShow(query),
     {
@@ -13,8 +13,9 @@ const useSearchTVShow = (query: string) => {
 
   return {
     fetchSearchResults: refetch,
-    searchResults: data,
-    isLoadingSearchResults: isLoading,
+    searchResults: data?.results ?? [],
+    isSearchResultsLoading: isLoading,
+    isSearchResultsSuccess: isSuccess,
     searchResultsError: error,
     isSearchResultsError: isError,
   };

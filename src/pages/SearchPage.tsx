@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useQueryClient } from "react-query";
 import { Container, SearchForm, SearchResults, Loading } from "../components";
 import useSearchTVShow from "../hooks/useSearchTVShow";
+import { QUERY_KEYS } from "../lib/constants";
+import { getTVShowEpisodes } from "../lib/netlifyFunctionsApi";
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const queryClient = useQueryClient();
 
   const {
     fetchSearchResults,
     searchResults,
-    isLoadingSearchResults,
+    isSearchResultsLoading,
+    isSearchResultsSuccess,
     searchResultsError,
     isSearchResultsError,
   } = useSearchTVShow(searchTerm);
@@ -18,6 +23,15 @@ const SearchPage = () => {
       fetchSearchResults();
     }
   }, [searchTerm, fetchSearchResults]);
+
+  useEffect(() => {
+    if (isSearchResultsSuccess && searchResults.length > 0) {
+      const imdbID = searchResults[0].imdbID;
+      queryClient.prefetchQuery([QUERY_KEYS.TV_SHOW_EPISODES, imdbID], () =>
+        getTVShowEpisodes(imdbID)
+      );
+    }
+  }, [isSearchResultsSuccess, searchResults, queryClient]);
 
   const onSubmit = (query: string) => {
     if (query !== "") {
@@ -34,15 +48,12 @@ const SearchPage = () => {
       </div>
       <div className="pt-10 pb-20">
         <Container>
-          {isLoadingSearchResults ? (
-            <Loading />
-          ) : (
-            searchResults && (
-              <SearchResults
-                searchTerm={searchTerm}
-                searchResults={searchResults.results}
-              />
-            )
+          {isSearchResultsLoading && <Loading />}
+          {isSearchResultsSuccess && (
+            <SearchResults
+              searchTerm={searchTerm}
+              searchResults={searchResults}
+            />
           )}
         </Container>
       </div>
