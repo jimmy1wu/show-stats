@@ -1,10 +1,15 @@
 const axios = require("axios").default;
+const Redis = require("ioredis");
+
+const client = new Redis(process.env.REDIS_URL);
 
 const OMDB_URL = process.env.OMDB_URL;
 const OMDB_API_KEY = process.env.OMDB_API_KEY;
 
 exports.handler = async function (event, context) {
   const { imdbID } = event.queryStringParameters;
+
+  const ratings = JSON.parse(await client.get(imdbID));
 
   const tvShowInfo = await axios.get("/", {
     baseURL: OMDB_URL,
@@ -24,7 +29,7 @@ exports.handler = async function (event, context) {
         title: episode.Title,
         season,
         episode: parseInt(episode.Episode),
-        imdbRating: parseFloat(episode.imdbRating) || 0,
+        imdbRating: ratings[episode.imdbID] || 0,
       };
     });
     episodes.push(...episodesBySeason);
