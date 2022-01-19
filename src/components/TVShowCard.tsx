@@ -17,7 +17,7 @@ const TVShowCard = ({ title, year, imdbID, posterURL }: TVShowCardProps) => {
 
   return (
     <div
-      className="inline-block w-full mb-5 shadow-sm hover:shadow-lg"
+      className="break-inside-avoid w-full mb-5 shadow-sm hover:shadow-lg"
       onClick={onClick}
     >
       <img
