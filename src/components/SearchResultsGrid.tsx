@@ -8,7 +8,7 @@ type SearchResultsGridProps = {
 
 const SearchResultsGrid = ({ searchResults }: SearchResultsGridProps) => {
   return (
-    <div className="col-count-1 md:col-count-2 lg:col-count-3 xl:col-count-4">
+    <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4">
       {searchResults.map((searchResult) => (
         <TVShowCard
           key={searchResult.imdbID}
