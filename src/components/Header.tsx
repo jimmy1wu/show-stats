@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router";
-import { Container, Logo } from ".";
+import { Container } from ".";
+import { ReactComponent as Logo } from "../assets/logo.svg";
 
 const Header = () => {
   const history = useHistory();

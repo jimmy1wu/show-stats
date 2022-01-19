@@ -1,22 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { ReactComponent as ColourBarsTv } from "../assets/tv-colour-bars.svg";
 
 const Loading = () => {
-  const [angle, setAngle] = useState(6);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setAngle(-1 * angle);
-    }, 500);
-  }, [angle]);
-
-  let rotateTransform = `rotate-${Math.abs(angle)}`;
-  if (angle < 0) {
-    rotateTransform = `-${rotateTransform}`;
-  }
-
   return (
-    <div className={`pt-10 text-center text-2xl transform ${rotateTransform}`}>
-      ⌛ Loading...
+    <div className="pt-10 text-center text-2xl">
+      <ColourBarsTv className="block m-auto h-40 w-40" />
+      <p>Loading...</p>
     </div>
   );
 };

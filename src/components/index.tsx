@@ -2,7 +2,6 @@ import Container from "./Container";
 import EpisodeList from "./EpisodeList";
 import Header from "./Header";
 import Loading from "./Loading";
-import Logo from "./Logo";
 import SearchForm from "./SearchForm";
 import RatingsChart from "./RatingsChart";
 import RatingsTooltip from "./RatingsTooltip";
@@ -16,7 +15,6 @@ export {
   EpisodeList,
   Header,
   Loading,
-  Logo,
   RatingsChart,
   RatingsTooltip,
   SearchForm,
