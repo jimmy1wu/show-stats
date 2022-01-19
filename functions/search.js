@@ -28,7 +28,15 @@ exports.handler = async function (event, context) {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      results: Search,
+      results: Search.map((result) => {
+        return {
+          ...result,
+          Poster:
+            result.Poster !== "N/A"
+              ? result.Poster
+              : "https://via.placeholder.com/300x400",
+        };
+      }),
     }),
   };
 };
