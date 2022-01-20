@@ -14,6 +14,8 @@ const ShowRatingPage = () => {
 
   const {
     seriesName,
+    season,
+    setSeason,
     totalSeasons,
     episodes,
     averageRating,
@@ -36,6 +38,8 @@ const ShowRatingPage = () => {
             imdbID={imdbID}
             title={seriesName}
             episodes={episodes}
+            currentSeason={season}
+            setCurrentSeason={setSeason}
             totalSeasons={totalSeasons}
           />
         </div>

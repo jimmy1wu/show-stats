@@ -14,20 +14,19 @@ import { useAspectRatio } from "../hooks";
 
 type RatingsChartProps = {
   imdbID: string;
+  currentSeason: number;
+  setCurrentSeason: (season: number) => void;
 } & TVShowEpisodes;
 
 const RatingsChart = ({
   imdbID,
   title,
   episodes,
+  currentSeason,
+  setCurrentSeason,
   totalSeasons,
 }: RatingsChartProps) => {
-  const [currentSeason, setCurrentSeason] = useState(0);
   const aspectRatio = useAspectRatio();
-
-  const data = episodes.filter(
-    (episode) => currentSeason === 0 || episode.season === currentSeason
-  );
 
   let xTicks;
   if (currentSeason === 0) {
@@ -65,7 +64,7 @@ const RatingsChart = ({
         </div>
       </div>
       <ResponsiveContainer width="100%" aspect={2 * aspectRatio}>
-        <AreaChart data={data}>
+        <AreaChart data={episodes}>
           <defs>
             <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#F59E0B" stopOpacity={1} />
