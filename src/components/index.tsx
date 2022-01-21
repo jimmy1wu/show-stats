@@ -3,6 +3,7 @@ import EpisodeList from "./EpisodeList";
 import Header from "./Header";
 import Loading from "./Loading";
 import SearchForm from "./SearchForm";
+import RatingDisplay from "./RatingDisplay";
 import RatingsChart from "./RatingsChart";
 import RatingsTooltip from "./RatingsTooltip";
 import SearchResults from "./SearchResults";
@@ -15,6 +16,7 @@ export {
   EpisodeList,
   Header,
   Loading,
+  RatingDisplay,
   RatingsChart,
   RatingsTooltip,
   SearchForm,
