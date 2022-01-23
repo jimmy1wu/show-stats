@@ -18,12 +18,12 @@ const ShowRatingPage = () => {
   const imdbID = match.params.id;
 
   const {
-    seriesName,
+    title,
     season,
     setSeason,
     totalSeasons,
-    episodes,
     averageRating,
+    episodes,
     highestRatedEpisodes,
     lowestRatedEpisodes,
     isEpisodesLoading,
@@ -41,11 +41,11 @@ const ShowRatingPage = () => {
         <div className="mb-6">
           <RatingsChart
             imdbID={imdbID}
-            title={seriesName}
+            title={title}
             episodes={episodes}
+            totalSeasons={totalSeasons}
             currentSeason={season}
             setCurrentSeason={setSeason}
-            totalSeasons={totalSeasons}
           />
         </div>
         <div className="lg:flex text-center">

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Episode, Show } from "../../src/models";
+import { Episode, Show, SearchResults } from "../../src/models";
 
 const OMDB_URL = process.env.OMDB_URL;
 const OMDB_API_KEY = process.env.OMDB_API_KEY;
@@ -13,11 +13,6 @@ omdb.interceptors.request.use((config) => {
   };
   return config;
 });
-
-type SearchResults = {
-  results: Show[];
-  totalResults: number;
-};
 
 export const searchByString = async (query: string) => {
   const { data } = await omdb.get<SearchResults>("/", {
@@ -34,7 +29,6 @@ export const searchByString = async (query: string) => {
         title: show.Title,
         year: show.Year,
         imdbID: show.imdbID,
-        type: show.Type,
         poster:
           show.Poster !== "N/A"
             ? show.Poster
@@ -59,10 +53,9 @@ export const getShowById = async (imdbID: string) => {
         throw new Error(resp.Error);
       }
       const res: Show = {
+        imdbID: resp.imdbID,
         title: resp.Title,
         year: resp.Year,
-        imdbID: resp.imdbID,
-        type: resp.Type,
         poster:
           resp.Poster !== "N/A"
             ? resp.Poster
@@ -89,7 +82,7 @@ export const getSeasonEpisodes = async (imdbID: string, season: number) => {
           title: episodeData.Title,
           season,
           episode: parseInt(episodeData.Episode),
-          imdbRating: parseFloat(episodeData.imdbRating) || 0,
+          imdbRating: parseFloat(episodeData.imdbRating),
         };
         return episode;
       });
@@ -97,4 +90,21 @@ export const getSeasonEpisodes = async (imdbID: string, season: number) => {
     },
   });
   return data;
+};
+
+export const getAllEpisodes = async (
+  imdbID: string,
+  totalSeasons: number
+) => {
+  const promises: Promise<Episode[]>[] = [];
+  for (let season = 1; season <= totalSeasons; season++) {
+    promises.push(getSeasonEpisodes(imdbID, season));
+  }
+  const data = await Promise.all(promises);
+
+  const episodes: Episode[] = [];
+  data.forEach((seasonEpisodes) => {
+    episodes.push(...seasonEpisodes);
+  });
+  return episodes;
 };

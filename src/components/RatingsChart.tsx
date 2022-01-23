@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { TVShowEpisodes } from "../models";
+import React from "react";
+import { Episode } from "../models";
 import {
   ResponsiveContainer,
   Area,
@@ -14,17 +14,20 @@ import { useAspectRatio } from "../hooks";
 
 type RatingsChartProps = {
   imdbID: string;
+  title: string;
+  episodes: Episode[];
+  totalSeasons: number;
   currentSeason: number;
   setCurrentSeason: (season: number) => void;
-} & TVShowEpisodes;
+};
 
 const RatingsChart = ({
   imdbID,
   title,
   episodes,
+  totalSeasons,
   currentSeason,
   setCurrentSeason,
-  totalSeasons,
 }: RatingsChartProps) => {
   const aspectRatio = useAspectRatio();
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SearchResults, TVShowEpisodes } from "../models";
+import { SearchResults, Show } from "../models";
 import { NETLIFY_FUNCTIONS } from "./constants";
 
 const netlifyFunctionsApi = axios.create({ baseURL: NETLIFY_FUNCTIONS });
@@ -14,7 +14,7 @@ export const searchTVShow = async (query: string) => {
 
 export const getTVShowEpisodes = async (imdbID: string) => {
   const url = "/episodes";
-  const { data } = await netlifyFunctionsApi.get<TVShowEpisodes>(url, {
+  const { data } = await netlifyFunctionsApi.get<Required<Show>>(url, {
     params: { imdbID },
   });
   return data;

@@ -1,8 +1,9 @@
+import { Episode } from ".";
 export interface Show {
+  imdbID: string;
   title: string;
   year: string;
-  imdbID: string;
-  type: string;
   poster: string;
+  episodes?: Episode[];
   totalSeasons?: number;
 }

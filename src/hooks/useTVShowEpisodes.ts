@@ -2,14 +2,22 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 import { QUERY_KEYS } from "../lib/constants";
 import { getTVShowEpisodes } from "../lib/netlifyFunctionsApi";
-import { TVShowEpisodes } from "../models";
+import { Show } from "../models";
 
 const useTVShowEpisodes = (imdbID: string) => {
   const [season, setSeason] = useState(0);
 
-  const fallback: TVShowEpisodes = { title: "", episodes: [], totalSeasons: 0 };
+  const fallback: Required<Show> = {
+    imdbID: "",
+    title: "",
+    year: "",
+    poster: "",
+    episodes: [],
+    totalSeasons: 0,
+  };
   const {
     data = fallback,
+    isSuccess,
     isLoading,
     error,
     isError,
@@ -36,15 +44,15 @@ const useTVShowEpisodes = (imdbID: string) => {
   const lowestRatedEpisodes = sortedEpisodes.slice(-5).reverse();
 
   return {
-    seriesName: data.title,
+    ...data,
     season,
-    setSeason: (season: number) => setSeason(season),
-    totalSeasons: data.totalSeasons,
+    setSeason,
     episodes,
     sortedEpisodes,
     averageRating,
     highestRatedEpisodes,
     lowestRatedEpisodes,
+    isEpisodesSuccess: isSuccess,
     isEpisodesLoading: isLoading,
     episodesError: error,
     isEpisodesError: isError,
