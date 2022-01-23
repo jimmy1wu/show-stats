@@ -12,10 +12,10 @@ const SearchResultsGrid = ({ searchResults }: SearchResultsGridProps) => {
       {searchResults.map((searchResult) => (
         <TVShowCard
           key={searchResult.imdbID}
-          title={searchResult.Title}
-          year={searchResult.Year}
+          title={searchResult.title}
+          year={searchResult.year}
           imdbID={searchResult.imdbID}
-          posterURL={searchResult.Poster}
+          posterURL={searchResult.poster}
         />
       ))}
     </div>

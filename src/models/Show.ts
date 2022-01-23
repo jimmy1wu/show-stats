@@ -1,7 +1,8 @@
 export interface Show {
-  Title: string;
-  Year: string;
+  title: string;
+  year: string;
   imdbID: string;
-  Type: string;
-  Poster: string;
+  type: string;
+  poster: string;
+  totalSeasons?: number;
 }
