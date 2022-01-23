@@ -1,5 +1,4 @@
 import React from "react";
-import { Episode } from "../models";
 import {
   ResponsiveContainer,
   Area,
@@ -11,6 +10,7 @@ import {
 } from "recharts";
 import { SeasonButton, RatingsTooltip } from ".";
 import { useAspectRatio } from "../hooks";
+import { Episode } from "../lib/types";
 
 type RatingsChartProps = {
   imdbID: string;

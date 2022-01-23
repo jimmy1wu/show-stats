@@ -1,6 +1,6 @@
 import React from "react";
-import { Episode } from "../models";
-import { getColorFromRating } from "../utils";
+import { Episode } from "../lib/types";
+import { getColorFromRating } from "../lib/utils";
 
 type EpisodeListProps = {
   title: string;

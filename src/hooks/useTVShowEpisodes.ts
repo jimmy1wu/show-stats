@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 import { QUERY_KEYS } from "../lib/constants";
 import { getTVShowEpisodes } from "../lib/netlifyFunctionsApi";
-import { Show } from "../models";
+import { Show } from "../lib/types";
 
 const useTVShowEpisodes = (imdbID: string) => {
   const [season, setSeason] = useState(0);

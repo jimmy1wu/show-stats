@@ -1,1 +1,0 @@
-export { getColorFromRating } from "./getColorFromRating";

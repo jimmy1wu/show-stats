@@ -1,6 +1,6 @@
 import React from "react";
 import { TVShowCard } from ".";
-import { Show } from "../models";
+import { Show } from "../lib/types";
 
 type SearchResultsGridProps = {
   searchResults: Show[];
@@ -12,9 +12,9 @@ const SearchResultsGrid = ({ searchResults }: SearchResultsGridProps) => {
       {searchResults.map((searchResult) => (
         <TVShowCard
           key={searchResult.imdbID}
+          imdbID={searchResult.imdbID}
           title={searchResult.title}
           year={searchResult.year}
-          imdbID={searchResult.imdbID}
           posterURL={searchResult.poster}
         />
       ))}

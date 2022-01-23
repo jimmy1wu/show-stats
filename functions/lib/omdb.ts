@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Episode, Show, SearchResults } from "../../src/models";
+import { Episode, Show, SearchResults } from "../../src/lib/types";
 
 const OMDB_URL = process.env.OMDB_URL;
 const OMDB_API_KEY = process.env.OMDB_API_KEY;

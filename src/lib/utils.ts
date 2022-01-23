@@ -9,6 +9,5 @@ export const getColorFromRating = (imdbRating: number) => {
   } else {
     textColor = "text-green-600";
   }
-
   return textColor;
 };

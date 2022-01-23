@@ -1,6 +1,6 @@
 import axios from "axios";
-import { SearchResults, Show } from "../models";
 import { NETLIFY_FUNCTIONS } from "./constants";
+import { SearchResults, Show } from "../lib/types";
 
 const netlifyFunctionsApi = axios.create({ baseURL: NETLIFY_FUNCTIONS });
 

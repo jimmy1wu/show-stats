@@ -1,7 +1,7 @@
 import { Handler } from "@netlify/functions";
 import redis from "./lib/redis";
 import { getAllEpisodes, getShowById } from "./lib/omdb";
-import { Show } from "../src/models";
+import { Show } from "../src/lib/types";
 
 export const handler: Handler = async (event, context) => {
   const { imdbID } = event.queryStringParameters;
