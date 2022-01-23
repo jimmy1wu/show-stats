@@ -4,7 +4,8 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Header } from "./components";
 import queryClient from "./lib/queryClient";
-import { SearchPage, ShowRatingPage } from "./pages";
+import SearchPage from "./pages/SearchPage";
+import ShowRatingPage from "./pages/ShowRatingPage";
 
 const App = () => {
   return (

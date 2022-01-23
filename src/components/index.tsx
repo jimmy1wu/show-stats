@@ -1,27 +1,12 @@
-import Container from "./Container";
-import EpisodeList from "./EpisodeList";
-import Header from "./Header";
-import Loading from "./Loading";
-import SearchForm from "./SearchForm";
-import RatingDisplay from "./RatingDisplay";
-import RatingsChart from "./RatingsChart";
-import RatingsTooltip from "./RatingsTooltip";
-import SearchResults from "./SearchResults";
-import SearchResultsGrid from "./SearchResultsGrid";
-import SeasonButton from "./SeasonButton";
-import TVShowCard from "./TVShowCard";
-
-export {
-  Container,
-  EpisodeList,
-  Header,
-  Loading,
-  RatingDisplay,
-  RatingsChart,
-  RatingsTooltip,
-  SearchForm,
-  SearchResults,
-  SearchResultsGrid,
-  SeasonButton,
-  TVShowCard,
-};
+export { default as Container } from "./Container";
+export { default as EpisodeList } from "./EpisodeList";
+export { default as Header } from "./Header";
+export { default as Loading } from "./Loading";
+export { default as SearchForm } from "./SearchForm";
+export { default as RatingDisplay } from "./RatingDisplay";
+export { default as RatingsChart } from "./RatingsChart";
+export { default as RatingsTooltip } from "./RatingsTooltip";
+export { default as SearchResults } from "./SearchResults";
+export { default as SearchResultsGrid } from "./SearchResultsGrid";
+export { default as SeasonButton } from "./SeasonButton";
+export { default as TVShowCard } from "./TVShowCard";

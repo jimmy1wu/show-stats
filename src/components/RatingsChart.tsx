@@ -9,8 +9,8 @@ import {
   CartesianGrid,
 } from "recharts";
 import { SeasonButton, RatingsTooltip } from ".";
-import { useAspectRatio } from "../hooks";
 import { Episode } from "../lib/types";
+import useAspectRatio from "../hooks/useAspectRatio";
 
 type RatingsChartProps = {
   imdbID: string;
