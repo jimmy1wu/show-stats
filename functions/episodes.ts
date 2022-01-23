@@ -1,12 +1,13 @@
-const axios = require("axios").default;
-const Redis = require("ioredis");
+import axios from "axios";
+import Redis from "ioredis";
+import { Handler } from "@netlify/functions";
 
 const client = new Redis(process.env.REDIS_URL);
 
 const OMDB_URL = process.env.OMDB_URL;
 const OMDB_API_KEY = process.env.OMDB_API_KEY;
 
-exports.handler = async function (event, context) {
+export const handler: Handler = async (event, context) => {
   const { imdbID } = event.queryStringParameters;
 
   const ratings = JSON.parse(await client.get(imdbID));
@@ -23,15 +24,17 @@ exports.handler = async function (event, context) {
       baseURL: OMDB_URL,
       params: { i: imdbID, season, plot: "short", apikey: OMDB_API_KEY },
     });
-    const episodesBySeason = tvShowSeasonInfo.data.Episodes.map((episode) => {
-      return {
-        imdbID: episode.imdbID,
-        title: episode.Title,
-        season,
-        episode: parseInt(episode.Episode),
-        imdbRating: ratings[episode.imdbID] || 0,
-      };
-    });
+    const episodesBySeason = tvShowSeasonInfo.data.Episodes.map(
+      (episode) => {
+        return {
+          imdbID: episode.imdbID,
+          title: episode.Title,
+          season,
+          episode: parseInt(episode.Episode),
+          imdbRating: ratings[episode.imdbID] || 0,
+        };
+      }
+    );
     episodes.push(...episodesBySeason);
   }
 

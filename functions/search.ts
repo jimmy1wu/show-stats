@@ -1,9 +1,10 @@
-const axios = require("axios").default;
+import axios from "axios";
+import { Handler } from "@netlify/functions";
 
 const OMDB_URL = process.env.OMDB_URL;
 const OMDB_API_KEY = process.env.OMDB_API_KEY;
 
-exports.handler = async function (event, context) {
+export const handler: Handler = async (event, context) => {
   const { query } = event.queryStringParameters;
   const searchResultsRes = await axios.get("/", {
     baseURL: OMDB_URL,
