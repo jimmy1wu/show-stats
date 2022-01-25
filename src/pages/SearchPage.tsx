@@ -1,60 +1,63 @@
 import React, { useEffect, useState } from "react";
-import { Container, SearchForm, SearchResults, Loading } from "../components";
-import usePrefetchEpisodes from "../hooks/usePrefetchEpisodes";
-import useSearchTVShow from "../hooks/useSearchTVShow";
+import {
+  Container,
+  SearchForm,
+  SearchResults,
+  Loading,
+} from "../components";
+import usePrefetchShow from "../hooks/usePrefetchShow";
+import useSearch from "../hooks/useSearch";
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const prefetchEpisodies = usePrefetchEpisodes();
+  const prefetchShow = usePrefetchShow();
 
   const {
-    fetchSearchResults,
+    search,
     searchResults,
-    isSearchResultsLoading,
-    isSearchResultsSuccess,
-    searchResultsError,
-    isSearchResultsError,
-  } = useSearchTVShow(searchTerm);
+    isSearchLoading,
+    isSearchSuccess,
+    searchError,
+    isSearchError,
+  } = useSearch(searchTerm);
 
   useEffect(() => {
     if (searchTerm !== "") {
-      fetchSearchResults();
+      search();
     }
-  }, [searchTerm, fetchSearchResults]);
+  }, [searchTerm, search]);
 
   useEffect(() => {
-    if (isSearchResultsSuccess && searchResults.length > 0) {
+    if (isSearchSuccess && searchResults.length > 0) {
       const imdbID = searchResults[0].imdbID;
-      prefetchEpisodies(imdbID);
+      prefetchShow(imdbID);
     }
-  }, [isSearchResultsSuccess, searchResults, prefetchEpisodies]);
-
-  const onSubmit = (query: string) => {
-    if (query !== "") {
-      setSearchTerm(query);
-    }
-  };
+  }, [isSearchSuccess, searchResults, prefetchShow]);
 
   return (
-    <div>
-      <div className="bg-blue-700 pt-16 md:pt-24 pb-12 md:pb-20">
+    <>
+      <section className="bg-blue-700 pt-16 pb-12">
         <Container>
-          <SearchForm onSubmit={onSubmit} />
+          <SearchForm
+            onSubmit={(query: string) => {
+              setSearchTerm(query);
+            }}
+          />
         </Container>
-      </div>
-      <div className="pt-10 pb-20">
+      </section>
+      <section className="pt-10 pb-20">
         <Container>
-          {isSearchResultsLoading && <Loading />}
-          {isSearchResultsSuccess && (
+          {isSearchLoading && <Loading />}
+          {isSearchSuccess && (
             <SearchResults
               searchTerm={searchTerm}
               searchResults={searchResults}
             />
           )}
         </Container>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 

@@ -1,11 +1,12 @@
 export { default as Container } from "./Container";
 export { default as EpisodeList } from "./EpisodeList";
 export { default as Header } from "./Header";
+export { default as Layout } from "./Layout";
 export { default as Loading } from "./Loading";
 export { default as SearchForm } from "./SearchForm";
 export { default as RatingDisplay } from "./RatingDisplay";
 export { default as RatingsChart } from "./RatingsChart";
-export { default as RatingsTooltip } from "./RatingsTooltip";
+export { default as RatingTooltip } from "./RatingTooltip";
 export { default as SearchResults } from "./SearchResults";
 export { default as SearchResultsGrid } from "./SearchResultsGrid";
 export { default as SeasonButton } from "./SeasonButton";

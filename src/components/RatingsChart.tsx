@@ -8,7 +8,7 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts";
-import { SeasonButton, RatingsTooltip } from ".";
+import { SeasonButton, RatingTooltip } from ".";
 import { Episode } from "../lib/types";
 import useAspectRatio from "../hooks/useAspectRatio";
 
@@ -76,7 +76,7 @@ const RatingsChart = ({
           </defs>
           <XAxis dataKey={xTicks ? "season" : "episode"} ticks={xTicks} />
           <YAxis domain={[0, 10]} tickCount={10} width={20} />
-          <Tooltip content={RatingsTooltip} />
+          <Tooltip content={RatingTooltip} />
           <CartesianGrid />
           <Area
             type="linear"

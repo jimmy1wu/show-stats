@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { QUERY_KEYS } from "../lib/constants";
-import { getTVShowEpisodes } from "../lib/netlifyFunctionsApi";
+import { QUERY_KEYS } from "../lib/react-query";
+import { getShow } from "../lib/api";
 import { Show } from "../lib/types";
 
-const useTVShowEpisodes = (imdbID: string) => {
+const useShow = (imdbID: string) => {
   const [season, setSeason] = useState(0);
 
   const fallback: Required<Show> = {
@@ -21,9 +21,7 @@ const useTVShowEpisodes = (imdbID: string) => {
     isLoading,
     error,
     isError,
-  } = useQuery([QUERY_KEYS.TV_SHOW_EPISODES, imdbID], () =>
-    getTVShowEpisodes(imdbID)
-  );
+  } = useQuery([QUERY_KEYS.GET_SHOW, imdbID], () => getShow(imdbID));
 
   const episodes = data.episodes.filter(
     (episode) => season === 0 || episode.season === season
@@ -52,11 +50,11 @@ const useTVShowEpisodes = (imdbID: string) => {
     averageRating,
     highestRatedEpisodes,
     lowestRatedEpisodes,
-    isEpisodesSuccess: isSuccess,
-    isEpisodesLoading: isLoading,
-    episodesError: error,
-    isEpisodesError: isError,
+    isShowSuccess: isSuccess,
+    isShowLoading: isLoading,
+    showError: error,
+    isShowError: isError,
   };
 };
 
-export default useTVShowEpisodes;
+export default useShow;

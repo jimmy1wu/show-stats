@@ -7,7 +7,7 @@ const Header = () => {
   const history = useHistory();
 
   return (
-    <div className="bg-blue-700 py-2.5">
+    <header className="bg-blue-700 py-2.5">
       <Container>
         <button
           className="cursor-pointer text-2xl text-gray-50"
@@ -16,7 +16,7 @@ const Header = () => {
           <Logo />
         </button>
       </Container>
-    </div>
+    </header>
   );
 };
 
