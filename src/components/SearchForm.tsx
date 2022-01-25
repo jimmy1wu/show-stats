@@ -26,6 +26,7 @@ const SearchForm = ({ onSubmit }: SearchFormProps) => {
         type="text"
         name="query"
         autoComplete="off"
+        spellCheck="false"
         placeholder="e.g., Dexter"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
