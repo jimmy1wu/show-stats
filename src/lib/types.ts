@@ -14,8 +14,3 @@ export type Show = {
   episodes?: Episode[];
   totalSeasons?: number;
 };
-
-export type SearchResults = {
-  results: Show[];
-  totalResults: number;
-};

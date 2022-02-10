@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SearchResults, Show } from "./types";
+import { Show } from "./types";
 
 const NETLIFY_FUNCTIONS_URL = "/.netlify/functions";
 
@@ -7,7 +7,7 @@ const netlify = axios.create({ baseURL: NETLIFY_FUNCTIONS_URL });
 
 export const search = async (query: string) => {
   const url = "/search";
-  const { data } = await netlify.get<SearchResults>(url, {
+  const { data } = await netlify.get<Show[]>(url, {
     params: { query },
   });
   return data;

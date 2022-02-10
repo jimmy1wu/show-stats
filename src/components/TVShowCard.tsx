@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { DEFAULT_POSTER_URL } from "../lib/constants";
 
 type TVShowCardProps = {
   title: string;
@@ -17,12 +18,12 @@ const TVShowCard = ({ title, year, imdbID, posterURL }: TVShowCardProps) => {
 
   return (
     <div
-      className="break-inside-avoid w-full mb-5 shadow-sm hover:shadow-lg"
+      className="break-inside-avoid w-full first:mt-0 mt-5 shadow-sm hover:shadow-lg"
       onClick={onClick}
     >
       <img
         className="w-full bg-gray-200"
-        src={posterURL}
+        src={posterURL || DEFAULT_POSTER_URL}
         alt="tv show poster"
       />
       <div className="bg-white text-center py-4 px-2">
