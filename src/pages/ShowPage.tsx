@@ -42,25 +42,19 @@ const ShowPage = () => {
           setCurrentSeason={setSeason}
         />
       </section>
-      <section className="lg:flex text-center">
-        <div className="lg:flex-1 lg:mx-2 mb-10">
-          <RatingDisplay
-            title="Average rating ⭐"
-            rating={averageRating}
-          />
-        </div>
-        <div className="lg:flex-1 lg:mx-2 mb-10">
-          <EpisodeList
-            title="Highest rated 👍"
-            episodes={highestRatedEpisodes}
-          />
-        </div>
-        <div className="lg:flex-1 lg:mx-2 mb-10">
-          <EpisodeList
-            title="Lowest rated 👎"
-            episodes={lowestRatedEpisodes}
-          />
-        </div>
+      <section className="flex flex-col lg:flex-row gap-5 text-center">
+        <RatingDisplay
+          title="Average rating ⭐" 
+          rating={averageRating}
+        />
+        <EpisodeList
+          title="Highest rated 👍"
+          episodes={highestRatedEpisodes}
+        />
+        <EpisodeList
+          title="Lowest rated 👎"
+          episodes={lowestRatedEpisodes}
+        />
       </section>
     </Container>
   );

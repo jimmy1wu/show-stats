@@ -3,9 +3,11 @@ import { Header } from ".";
 
 const Layout = ({ children }: PropsWithChildren<{}>) => {
   return (
-    <div className="min-h-screen bg-blue-50">
+    <div className="flex flex-col min-h-screen bg-blue-50">
       <Header />
-      <main>{children}</main>
+      <main className="flex-grow">
+        {children}
+      </main>
     </div>
   );
 };

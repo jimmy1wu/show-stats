@@ -50,18 +50,16 @@ const RatingsChart = ({
 
   return (
     <div>
-      <div className="lg:flex lg:flex-wrap items-end mb-2">
-        <div className="lg:flex-1">
-          <a
-            className="text-4xl lg:text-5xl font-semibold hover:underline"
-            href={`https://www.imdb.com/title/${imdbID}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {title}
-          </a>
-        </div>
-        <div className="lg:flex-1 lg:text-right">
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-2">
+        <a
+          className="text-4xl lg:text-5xl font-semibold hover:underline"
+          href={`https://www.imdb.com/title/${imdbID}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {title}
+        </a>
+        <div className="lg:text-right">
           <h2 className="text-2xl">Season</h2>
           {buttons}
         </div>
