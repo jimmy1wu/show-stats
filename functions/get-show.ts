@@ -1,25 +1,17 @@
 import { Handler } from "@netlify/functions";
 import { execute } from "./lib/hasura";
+import { withErrorHandler } from "./lib/middleware";
 
-export const handler: Handler = async (event, context) => {
+const baseHandler: Handler = async (event, context) => {
   const { imdbID } = event.queryStringParameters;
 
-  const { data, errors } = await getShow(imdbID);
+  const { show } = await getShow(imdbID);
 
-  if (errors) {
-    console.error(errors);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        message: "Something unexpected happened.",
-      }),
-    };
-  }
-
-  if (!data.shows_by_pk) {
+  if (!show) {
     return {
       statusCode: 404,
       body: JSON.stringify({
+        title: "Not found!",
         message: `Could not find show with IMDb ID ${imdbID}.`,
       }),
     };
@@ -27,15 +19,17 @@ export const handler: Handler = async (event, context) => {
 
   return {
     statusCode: 200,
-    body: JSON.stringify(data.shows_by_pk),
+    body: JSON.stringify(show),
   };
 };
+
+export const handler = withErrorHandler(baseHandler);
 
 function getShow(imdbID: string) {
   return execute({
     query: `
       query GetShow($imdbID: String!) {
-        shows_by_pk(imdbID: $imdbID) {
+        show: shows_by_pk(imdbID: $imdbID) {
           imdbID
           title
           poster

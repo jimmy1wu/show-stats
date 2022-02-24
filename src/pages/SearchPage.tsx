@@ -4,6 +4,7 @@ import {
   SearchForm,
   SearchResults,
   Loading,
+  ErrorMessage,
 } from "../components";
 import usePrefetchShow from "../hooks/usePrefetchShow";
 import useSearch from "../hooks/useSearch";
@@ -48,7 +49,12 @@ const SearchPage = () => {
       </section>
       <section className="pt-10 pb-20">
         <Container>
-          {isSearchLoading && <Loading />}
+          {isSearchLoading && (
+            <Loading />
+          )}
+          {isSearchError && (
+            <ErrorMessage error={searchError} />
+          )}
           {isSearchSuccess && (
             <SearchResults
               searchTerm={searchTerm}

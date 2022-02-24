@@ -1,26 +1,19 @@
 import { Handler } from "@netlify/functions";
 import { execute } from "./lib/hasura";
+import { withErrorHandler } from "./lib/middleware";
 
-export const handler: Handler = async (event, context) => {
+const baseHandler: Handler = async (event, context) => {
   const { query } = event.queryStringParameters;
 
-  const { data, errors } = await search(query);
-
-  if (errors) {
-    console.error(errors);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        message: "Something unexpected happened.",
-      }),
-    };
-  }
+  const { shows } = await search(query);
 
   return {
     statusCode: 200,
-    body: JSON.stringify(data.shows),
+    body: JSON.stringify(shows),
   };
 };
+
+export const handler = withErrorHandler(baseHandler);
 
 function search(query: string) {
   return execute({

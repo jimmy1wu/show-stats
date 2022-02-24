@@ -8,6 +8,7 @@ export const QUERY_KEYS = {
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
+      retry: false,
       staleTime: Infinity,
       cacheTime: Infinity,
       refetchOnMount: false,

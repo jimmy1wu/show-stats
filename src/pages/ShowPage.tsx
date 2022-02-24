@@ -6,6 +6,7 @@ import {
   RatingsChart,
   EpisodeList,
   RatingDisplay,
+  ErrorMessage,
 } from "../components";
 import useShow from "../hooks/useShow";
 
@@ -30,6 +31,10 @@ const ShowPage = () => {
     return <Loading />;
   }
 
+  if (isShowError) {
+    return <ErrorMessage error={showError} />;
+  }
+
   return (
     <Container className="pt-10 pb-20">
       <section className="mb-6">
@@ -44,7 +49,7 @@ const ShowPage = () => {
       </section>
       <section className="flex flex-col lg:flex-row gap-5 text-center">
         <RatingDisplay
-          title="Average rating ⭐" 
+          title="Average rating ⭐"
           rating={averageRating}
         />
         <EpisodeList

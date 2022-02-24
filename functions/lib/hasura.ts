@@ -24,5 +24,10 @@ export const execute = async ({
     query,
     variables,
   });
-  return data;
+
+  if (data.errors) {
+    throw new Error(data.errors);
+  }
+
+  return data.data;
 };
