@@ -34,7 +34,7 @@ function getShow(imdbID: string) {
           title
           poster
           year
-          episodes(order_by: {episode: asc, season: asc}) {
+          episodes(order_by: [{season: asc}, {episode: asc}]) {
             imdbID
             title
             season
