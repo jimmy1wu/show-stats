@@ -15,7 +15,7 @@ const ErrorMessage = ({ error }: ErrorMessageProps) => {
   }
 
   return (
-    <div className="px-10 text-center">
+    <div className="py-10 text-center">
       <h3 className="text-4xl">{title}</h3>
       <p className="text-xl">{message}</p>
     </div>
