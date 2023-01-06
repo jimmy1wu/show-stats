@@ -19,6 +19,7 @@ const TVShowCard = ({ title, year, imdbID, posterURL }: TVShowCardProps) => {
   return (
     <div
       className="break-inside-avoid w-full first:mt-0 mt-5 shadow-sm hover:shadow-lg"
+      data-test-id="tv-show-card"
       onClick={onClick}
     >
       <img

@@ -12,7 +12,7 @@ const SearchResults = ({
   searchResults,
 }: SearchResultsProps) => {
   return (
-    <div>
+    <div data-test-id="search-results">
       <h1 className="text-xl md:text-2xl text-center mb-5">
         Showing results for <span className="italic">{searchTerm}</span>
       </h1>
