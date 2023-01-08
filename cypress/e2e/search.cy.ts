@@ -24,7 +24,7 @@ context("search", () => {
   });
 
   it("displays a message when no results are found", () => {
-    cy.intercept("/api/search?query=doesnotexist", { fixture: "search-empty.json" }).as("search");
+    cy.intercept("/api/search?query=doesnotexist", { body: [] }).as("search");
 
     cy.get('[data-test-id="search-text"]').type("doesnotexist");
     cy.get('[data-test-id="search-submit"]').click();
