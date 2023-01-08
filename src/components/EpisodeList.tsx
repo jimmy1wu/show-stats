@@ -9,7 +9,10 @@ type EpisodeListProps = {
 
 const EpisodeList = ({ title, episodes }: EpisodeListProps) => {
   return (
-    <div className="rounded-xl bg-white w-full px-8 pt-5 pb-8 shadow-md">
+    <div
+      data-test-id="show-episode-list"
+      className="rounded-xl bg-white w-full px-8 pt-5 pb-8 shadow-md"
+    >
       <h2 className="text-2xl md:text-3xl text-center">{title}</h2>
       <ol className="mt-5 text-left">
         {episodes.map((ep) => {

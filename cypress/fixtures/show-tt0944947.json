@@ -1,0 +1,520 @@
+{
+  "imdbID": "tt0944947",
+  "title": "Game of Thrones",
+  "poster": "",
+  "year": "2011-2019",
+  "episodes": [
+    {
+      "imdbID": "tt1480055",
+      "title": "Winter Is Coming",
+      "season": 1,
+      "episode": 1,
+      "imdbRating": 8.9
+    },
+    {
+      "imdbID": "tt1668746",
+      "title": "The Kingsroad",
+      "season": 1,
+      "episode": 2,
+      "imdbRating": 8.6
+    },
+    {
+      "imdbID": "tt1829962",
+      "title": "Lord Snow",
+      "season": 1,
+      "episode": 3,
+      "imdbRating": 8.5
+    },
+    {
+      "imdbID": "tt1829963",
+      "title": "Cripples, Bastards, and Broken Things",
+      "season": 1,
+      "episode": 4,
+      "imdbRating": 8.6
+    },
+    {
+      "imdbID": "tt1829964",
+      "title": "The Wolf and the Lion",
+      "season": 1,
+      "episode": 5,
+      "imdbRating": 9
+    },
+    {
+      "imdbID": "tt1837862",
+      "title": "A Golden Crown",
+      "season": 1,
+      "episode": 6,
+      "imdbRating": 9.1
+    },
+    {
+      "imdbID": "tt1837863",
+      "title": "You Win or You Die",
+      "season": 1,
+      "episode": 7,
+      "imdbRating": 9.1
+    },
+    {
+      "imdbID": "tt1837864",
+      "title": "The Pointy End",
+      "season": 1,
+      "episode": 8,
+      "imdbRating": 8.9
+    },
+    {
+      "imdbID": "tt1851398",
+      "title": "Baelor",
+      "season": 1,
+      "episode": 9,
+      "imdbRating": 9.6
+    },
+    {
+      "imdbID": "tt1851397",
+      "title": "Fire and Blood",
+      "season": 1,
+      "episode": 10,
+      "imdbRating": 9.4
+    },
+    {
+      "imdbID": "tt1971833",
+      "title": "The North Remembers",
+      "season": 2,
+      "episode": 1,
+      "imdbRating": 8.6
+    },
+    {
+      "imdbID": "tt2069318",
+      "title": "The Night Lands",
+      "season": 2,
+      "episode": 2,
+      "imdbRating": 8.4
+    },
+    {
+      "imdbID": "tt2070135",
+      "title": "What Is Dead May Never Die",
+      "season": 2,
+      "episode": 3,
+      "imdbRating": 8.7
+    },
+    {
+      "imdbID": "tt2069319",
+      "title": "Garden of Bones",
+      "season": 2,
+      "episode": 4,
+      "imdbRating": 8.6
+    },
+    {
+      "imdbID": "tt2074658",
+      "title": "The Ghost of Harrenhal",
+      "season": 2,
+      "episode": 5,
+      "imdbRating": 8.6
+    },
+    {
+      "imdbID": "tt2085238",
+      "title": "The Old Gods and the New",
+      "season": 2,
+      "episode": 6,
+      "imdbRating": 8.9
+    },
+    {
+      "imdbID": "tt2085239",
+      "title": "A Man Without Honor",
+      "season": 2,
+      "episode": 7,
+      "imdbRating": 8.8
+    },
+    {
+      "imdbID": "tt2085240",
+      "title": "The Prince of Winterfell",
+      "season": 2,
+      "episode": 8,
+      "imdbRating": 8.6
+    },
+    {
+      "imdbID": "tt2084342",
+      "title": "Blackwater",
+      "season": 2,
+      "episode": 9,
+      "imdbRating": 9.6
+    },
+    {
+      "imdbID": "tt2112510",
+      "title": "Valar Morghulis",
+      "season": 2,
+      "episode": 10,
+      "imdbRating": 9.3
+    },
+    {
+      "imdbID": "tt2178782",
+      "title": "Valar Dohaeris",
+      "season": 3,
+      "episode": 1,
+      "imdbRating": 8.6
+    },
+    {
+      "imdbID": "tt2178772",
+      "title": "Dark Wings, Dark Words",
+      "season": 3,
+      "episode": 2,
+      "imdbRating": 8.5
+    },
+    {
+      "imdbID": "tt2178802",
+      "title": "Walk of Punishment",
+      "season": 3,
+      "episode": 3,
+      "imdbRating": 8.7
+    },
+    {
+      "imdbID": "tt2178798",
+      "title": "And Now His Watch Is Ended",
+      "season": 3,
+      "episode": 4,
+      "imdbRating": 9.5
+    },
+    {
+      "imdbID": "tt2178788",
+      "title": "Kissed by Fire",
+      "season": 3,
+      "episode": 5,
+      "imdbRating": 8.9
+    },
+    {
+      "imdbID": "tt2178812",
+      "title": "The Climb",
+      "season": 3,
+      "episode": 6,
+      "imdbRating": 8.7
+    },
+    {
+      "imdbID": "tt2178814",
+      "title": "The Bear and the Maiden Fair",
+      "season": 3,
+      "episode": 7,
+      "imdbRating": 8.6
+    },
+    {
+      "imdbID": "tt2178806",
+      "title": "Second Sons",
+      "season": 3,
+      "episode": 8,
+      "imdbRating": 8.9
+    },
+    {
+      "imdbID": "tt2178784",
+      "title": "The Rains of Castamere",
+      "season": 3,
+      "episode": 9,
+      "imdbRating": 9.9
+    },
+    {
+      "imdbID": "tt2178796",
+      "title": "Mhysa",
+      "season": 3,
+      "episode": 10,
+      "imdbRating": 9
+    },
+    {
+      "imdbID": "tt2816136",
+      "title": "Two Swords",
+      "season": 4,
+      "episode": 1,
+      "imdbRating": 9
+    },
+    {
+      "imdbID": "tt2832378",
+      "title": "The Lion and the Rose",
+      "season": 4,
+      "episode": 2,
+      "imdbRating": 9.7
+    },
+    {
+      "imdbID": "tt2972426",
+      "title": "Breaker of Chains",
+      "season": 4,
+      "episode": 3,
+      "imdbRating": 8.7
+    },
+    {
+      "imdbID": "tt2972428",
+      "title": "Oathkeeper",
+      "season": 4,
+      "episode": 4,
+      "imdbRating": 8.7
+    },
+    {
+      "imdbID": "tt3060856",
+      "title": "First of His Name",
+      "season": 4,
+      "episode": 5,
+      "imdbRating": 8.6
+    },
+    {
+      "imdbID": "tt3060910",
+      "title": "The Laws of Gods and Men",
+      "season": 4,
+      "episode": 6,
+      "imdbRating": 9.7
+    },
+    {
+      "imdbID": "tt3060876",
+      "title": "Mockingbird",
+      "season": 4,
+      "episode": 7,
+      "imdbRating": 9
+    },
+    {
+      "imdbID": "tt3060782",
+      "title": "The Mountain and the Viper",
+      "season": 4,
+      "episode": 8,
+      "imdbRating": 9.7
+    },
+    {
+      "imdbID": "tt3060858",
+      "title": "The Watchers on the Wall",
+      "season": 4,
+      "episode": 9,
+      "imdbRating": 9.6
+    },
+    {
+      "imdbID": "tt3060860",
+      "title": "The Children",
+      "season": 4,
+      "episode": 10,
+      "imdbRating": 9.6
+    },
+    {
+      "imdbID": "tt3658012",
+      "title": "The Wars to Come",
+      "season": 5,
+      "episode": 1,
+      "imdbRating": 8.3
+    },
+    {
+      "imdbID": "tt3846626",
+      "title": "The House of Black and White",
+      "season": 5,
+      "episode": 2,
+      "imdbRating": 8.3
+    },
+    {
+      "imdbID": "tt3866836",
+      "title": "High Sparrow",
+      "season": 5,
+      "episode": 3,
+      "imdbRating": 8.4
+    },
+    {
+      "imdbID": "tt3866838",
+      "title": "Sons of the Harpy",
+      "season": 5,
+      "episode": 4,
+      "imdbRating": 8.5
+    },
+    {
+      "imdbID": "tt3866840",
+      "title": "Kill the Boy",
+      "season": 5,
+      "episode": 5,
+      "imdbRating": 8.5
+    },
+    {
+      "imdbID": "tt3866842",
+      "title": "Unbowed, Unbent, Unbroken",
+      "season": 5,
+      "episode": 6,
+      "imdbRating": 7.9
+    },
+    {
+      "imdbID": "tt3866846",
+      "title": "The Gift",
+      "season": 5,
+      "episode": 7,
+      "imdbRating": 8.8
+    },
+    {
+      "imdbID": "tt3866850",
+      "title": "Hardhome",
+      "season": 5,
+      "episode": 8,
+      "imdbRating": 9.8
+    },
+    {
+      "imdbID": "tt3866826",
+      "title": "The Dance of Dragons",
+      "season": 5,
+      "episode": 9,
+      "imdbRating": 9.4
+    },
+    {
+      "imdbID": "tt3866862",
+      "title": "Mother's Mercy",
+      "season": 5,
+      "episode": 10,
+      "imdbRating": 9.1
+    },
+    {
+      "imdbID": "tt3658014",
+      "title": "The Red Woman",
+      "season": 6,
+      "episode": 1,
+      "imdbRating": 8.4
+    },
+    {
+      "imdbID": "tt4077554",
+      "title": "Home",
+      "season": 6,
+      "episode": 2,
+      "imdbRating": 9.3
+    },
+    {
+      "imdbID": "tt4131606",
+      "title": "Oathbreaker",
+      "season": 6,
+      "episode": 3,
+      "imdbRating": 8.6
+    },
+    {
+      "imdbID": "tt4283016",
+      "title": "Book of the Stranger",
+      "season": 6,
+      "episode": 4,
+      "imdbRating": 9
+    },
+    {
+      "imdbID": "tt4283028",
+      "title": "The Door",
+      "season": 6,
+      "episode": 5,
+      "imdbRating": 9.7
+    },
+    {
+      "imdbID": "tt4283054",
+      "title": "Blood of My Blood",
+      "season": 6,
+      "episode": 6,
+      "imdbRating": 8.3
+    },
+    {
+      "imdbID": "tt4283060",
+      "title": "The Broken Man",
+      "season": 6,
+      "episode": 7,
+      "imdbRating": 8.5
+    },
+    {
+      "imdbID": "tt4283074",
+      "title": "No One",
+      "season": 6,
+      "episode": 8,
+      "imdbRating": 8.3
+    },
+    {
+      "imdbID": "tt4283088",
+      "title": "Battle of the Bastards",
+      "season": 6,
+      "episode": 9,
+      "imdbRating": 9.9
+    },
+    {
+      "imdbID": "tt4283094",
+      "title": "The Winds of Winter",
+      "season": 6,
+      "episode": 10,
+      "imdbRating": 9.9
+    },
+    {
+      "imdbID": "tt5654088",
+      "title": "Dragonstone",
+      "season": 7,
+      "episode": 1,
+      "imdbRating": 8.5
+    },
+    {
+      "imdbID": "tt5655178",
+      "title": "Stormborn",
+      "season": 7,
+      "episode": 2,
+      "imdbRating": 8.8
+    },
+    {
+      "imdbID": "tt5775840",
+      "title": "The Queen's Justice",
+      "season": 7,
+      "episode": 3,
+      "imdbRating": 9.1
+    },
+    {
+      "imdbID": "tt5775846",
+      "title": "The Spoils of War",
+      "season": 7,
+      "episode": 4,
+      "imdbRating": 9.7
+    },
+    {
+      "imdbID": "tt5775854",
+      "title": "Eastwatch",
+      "season": 7,
+      "episode": 5,
+      "imdbRating": 8.7
+    },
+    {
+      "imdbID": "tt5775864",
+      "title": "Beyond the Wall",
+      "season": 7,
+      "episode": 6,
+      "imdbRating": 9
+    },
+    {
+      "imdbID": "tt5775874",
+      "title": "The Dragon and the Wolf",
+      "season": 7,
+      "episode": 7,
+      "imdbRating": 9.4
+    },
+    {
+      "imdbID": "tt5924366",
+      "title": "Winterfell",
+      "season": 8,
+      "episode": 1,
+      "imdbRating": 7.6
+    },
+    {
+      "imdbID": "tt6027908",
+      "title": "A Knight of the Seven Kingdoms",
+      "season": 8,
+      "episode": 2,
+      "imdbRating": 7.9
+    },
+    {
+      "imdbID": "tt6027912",
+      "title": "The Long Night",
+      "season": 8,
+      "episode": 3,
+      "imdbRating": 7.5
+    },
+    {
+      "imdbID": "tt6027914",
+      "title": "The Last of the Starks",
+      "season": 8,
+      "episode": 4,
+      "imdbRating": 5.5
+    },
+    {
+      "imdbID": "tt6027916",
+      "title": "The Bells",
+      "season": 8,
+      "episode": 5,
+      "imdbRating": 6
+    },
+    {
+      "imdbID": "tt6027920",
+      "title": "The Iron Throne",
+      "season": 8,
+      "episode": 6,
+      "imdbRating": 4
+    }
+  ],
+  "totalSeasons": 8
+}

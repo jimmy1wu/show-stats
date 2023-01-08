@@ -52,6 +52,7 @@ const RatingsChart = ({
     <div>
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-2">
         <a
+          data-test-id="show-title"
           className="text-4xl lg:text-5xl font-semibold hover:underline"
           href={`https://www.imdb.com/title/${imdbID}`}
           target="_blank"
