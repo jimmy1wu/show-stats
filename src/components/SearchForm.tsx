@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 type SearchFormProps = {
+  placeholder: string;
   onSubmit: (q: string) => void;
 };
 
-const SearchForm = ({ onSubmit }: SearchFormProps) => {
+const SearchForm = ({ placeholder, onSubmit }: SearchFormProps) => {
   const [query, setQuery] = useState("");
 
   return (
@@ -28,7 +29,7 @@ const SearchForm = ({ onSubmit }: SearchFormProps) => {
         name="query"
         autoComplete="off"
         spellCheck="false"
-        placeholder="e.g., Dexter"
+        placeholder={placeholder}
         value={query}
         onChange={(event) => setQuery(event.target.value)}
       />
