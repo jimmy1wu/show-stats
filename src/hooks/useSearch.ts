@@ -4,6 +4,7 @@ import { search } from "../lib/api";
 import { Show } from "../lib/types";
 
 const useSearch = (query: string) => {
+  const lowercaseQuery = query.toLowerCase();
   const fallback: Show[] = [];
   const {
     refetch,
@@ -13,8 +14,8 @@ const useSearch = (query: string) => {
     error,
     isError,
   } = useQuery(
-    [QUERY_KEYS.SEARCH, query], 
-    () => search(query), 
+    [QUERY_KEYS.SEARCH, lowercaseQuery], 
+    () => search(lowercaseQuery), 
     { enabled: false }
   );
 

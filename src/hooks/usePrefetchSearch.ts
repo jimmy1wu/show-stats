@@ -6,8 +6,9 @@ const usePrefetchSearch = () => {
   const queryClient = useQueryClient();
 
   const prefetchShow = (query: string) => {
-    queryClient.prefetchQuery([QUERY_KEYS.SEARCH, query], () => 
-      search(query)
+    const lowercaseQuery = query.toLowerCase();
+    queryClient.prefetchQuery([QUERY_KEYS.SEARCH, lowercaseQuery], () => 
+      search(lowercaseQuery)
     );
   };
 
