@@ -10,8 +10,13 @@ const ErrorMessage = ({ error }: ErrorMessageProps) => {
   let message = "Something went wrong.";
 
   if (axios.isAxiosError(error)) {
-    title = error.response!.data.title;
-    message = error.response!.data.message;
+    const data = error.response?.data;
+    if (data?.title) {
+      title = data.title;
+    }
+    if (data?.message) {
+      message = data.message;
+    }
   }
 
   return (

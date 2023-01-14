@@ -52,4 +52,18 @@ context("show", () => {
     cy.get('[data-test-id="error-message"] h3').contains(title);
     cy.get('[data-test-id="error-message"] p').contains(message);
   });
+
+  it("displays the default error message when the server error is not in the expected format", () => {
+    cy.intercept("/api/get-show?imdbID=asdf", {
+      statusCode: 500,
+      body: "<p>unexpected format</p>",
+    }).as("getShow");
+
+    cy.visit("/asdf");
+
+    cy.wait("@getShow");
+
+    cy.get('[data-test-id="error-message"] h3').contains("Oh no!");
+    cy.get('[data-test-id="error-message"] p').contains("Something went wrong.");
+  });
 });
