@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { ReactComponent as StaticTv } from "../assets/tv-static.svg";
 
 type ErrorMessageProps = {
   error: unknown;
@@ -21,6 +22,7 @@ const ErrorMessage = ({ error }: ErrorMessageProps) => {
 
   return (
     <div data-test-id="error-message" className="py-10 text-center">
+      <StaticTv className="block m-auto h-40 w-40" />
       <h3 className="text-4xl">{title}</h3>
       <p className="text-xl">{message}</p>
     </div>
