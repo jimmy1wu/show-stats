@@ -1,7 +1,7 @@
 import React from "react";
 import { QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Layout } from "./components";
 import queryClient from "./lib/react-query";
 import SearchPage from "./pages/SearchPage";
@@ -15,6 +15,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={SearchPage} />
             <Route exact path="/:imdbID" component={ShowPage} />
+            <Redirect to="/" />
           </Switch>
         </Layout>
       </BrowserRouter>
